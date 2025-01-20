@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import defaultMarkerImage from "./assets/logo.png"; // 기본 마커 이미지
 import selectedMarkerImage from "./assets/selected.png";
 import textLogo from "./assets/textlogo.png";
-import {FaClock, FaHeart, FaMapMarkerAlt} from "react-icons/fa"; // 선택된 마커 이미지
+import {FaClock, FaHeart, FaMapMarkerAlt, FaRegHeart} from "react-icons/fa"; // 선택된 마커 이미지
 import modal from "./assets/modal.png";
-import aab from "./assets/aab.png";
+import {LuBookHeart} from "react-icons/lu";
 
 const MainPage = () => {
     const Header = () => {
@@ -18,7 +18,7 @@ const MainPage = () => {
 
                 {/* 오른쪽: 하트 아이콘 */}
                 <div className="ml-auto pr-3">
-                    <FaHeart className="text-red-500 h-6 w-6" />
+                    <LuBookHeart className="h-7 w-7 text-black"/>
                 </div>
             </header>
         );
