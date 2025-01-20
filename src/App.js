@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./MainPage";
 import FarmDetailPage from "./FarmDetailPage";
-import textLogo from "./assets/textlogo.png";
-import { FaHeart } from "react-icons/fa";
+import Register from "./Register";
 
 const App = () => {
 
@@ -14,10 +13,11 @@ const App = () => {
                 {/* 고정된 헤더 */}
 
                 {/* 콘텐츠 영역 */}
-                <div >
+                <div>
                     <Routes>
                         <Route path="/" element={<MainPage />} />
                         <Route path="/farm/:id" element={<FarmDetailPage />} />
+                        <Route path="/register" element={<Register />} />
                     </Routes>
                 </div>
             </div>
