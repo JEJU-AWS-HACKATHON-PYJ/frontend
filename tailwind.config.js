@@ -7,12 +7,12 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'mobile': '375px', // iPhone 기준
+        'mobile': '275px', // iPhone 기준
         'tablet': '768px',
         'desktop': '1024px',
       },
       maxWidth: {
-        'app': '414px', // 모바일 앱 최대 크기
+        'app': '214px', // 모바일 앱 최대 크기
       },
     },
   },
