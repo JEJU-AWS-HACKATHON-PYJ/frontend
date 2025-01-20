@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import defaultMarkerImage from "./assets/logo.png"; // 기본 마커 이미지
 import selectedMarkerImage from "./assets/selected.png";
 import textLogo from "./assets/textlogo.png";
-import {FaHeart} from "react-icons/fa"; // 선택된 마커 이미지
+import {FaClock, FaHeart, FaMapMarkerAlt} from "react-icons/fa"; // 선택된 마커 이미지
 import modal from "./assets/modal.png";
 import aab from "./assets/aab.png";
 
@@ -83,6 +83,27 @@ const MainPage = () => {
             // 지도 초기화
             const map = new naver.maps.Map("map", mapOptions);
             setMapInstance(map); // 지도 인스턴스 저장
+            // 현재 위치 마커 추가
+            const currentLocationMarker = new naver.maps.Marker({
+                position: new naver.maps.LatLng(
+                    currentLocation.lat,
+                    currentLocation.lng
+                ),
+                map: map,
+                icon: {
+                    content: `
+                    <div style="
+                        width: 20px;
+                        height: 20px;
+                        background-color: blue;
+                        border-radius: 50%;
+                        box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+                        border: 2px solid white;
+                    "></div>
+                `,
+                    anchor: new naver.maps.Point(10, 10), // 마커 중심 설정
+                },
+            });
         }
     }, [currentLocation]); // currentLocation 변경 시에만 실행
 
@@ -174,6 +195,7 @@ const MainPage = () => {
                         onClick={(e) => {
                             e.stopPropagation();
                             setIsModalVisible(false); // 애니메이션으로 모달 닫기
+                            setSelectedPlace(null);
                         }}
                     >
                         <img src ={modal} />
@@ -183,11 +205,18 @@ const MainPage = () => {
 
                     <div onClick={() => navigate(`/farm/${selectedPlace.id}`)}>
                     <h2 className="text-3xl font-bold mt-6 mb-2">{selectedPlace.name}</h2>
-                    <p className="text-md">{selectedPlace.address}</p>
-                    <p className="text-md">
-                        영업시간: {selectedPlace.operatingHours}
-                    </p>
-                    </div>
+                        <div className="mt-4 space-y-2">
+                            {/* 주소 */}
+                            <p className="text-md font-medium flex items-center">
+                                <FaMapMarkerAlt className=" mr-2" />
+                                {selectedPlace.address}
+                            </p>
+                            {/* 영업시간 */}
+                            <p className="text-md font-medium flex items-center">
+                                <FaClock className="mr-2" />
+                                영업시간: {selectedPlace.operatingHours}
+                            </p>
+                        </div></div>
                 </div>
             )}
 
