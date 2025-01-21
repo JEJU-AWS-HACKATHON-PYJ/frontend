@@ -218,7 +218,7 @@ const MainPage = () => {
             longitude: 126.306514122101,
             keywords: null,
             isFavorite: false,
-            imageUrl: null,
+            imageUrl: '/assets/g3.png',
             homepageLink: "https://www.instagram.com/jeju_eunha/?igshid=8uhei5dsad55",
             productName1: null,
             productPrice1: null,

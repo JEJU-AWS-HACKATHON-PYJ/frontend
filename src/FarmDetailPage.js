@@ -16,7 +16,7 @@ const dummyData = [
         longitude: 126.5661908,
         keywords: "무농약, GAP, 저탄소",
         isFavorite: true,
-        imageUrl: null,
+        imageUrl: "/assets/g1.jpg",
         homepageLink: "https://blog.naver.com/farmerjeju",
         products: [
             { name: "무농약귤 3kg", price: 15000 },
@@ -176,12 +176,12 @@ const dummyData = [
         address: "제주특별자치도 서귀포시 안덕면 사계리",
         phone: "064-792-0008",
         operatingHours: "09:00 - 17:30",
-        description: "",
+        description: "참 맛있어요.",
         latitude: 33.2316941376585,
         longitude: 126.306514122101,
-        keywords: null,
+        keywords: "달달,상큼",
         isFavorite: false,
-        imageUrl: null,
+        imageUrl:'/assets/g3.png',
         homepageLink: "https://www.instagram.com/jeju_eunha/?igshid=8uhei5dsad55",
         productName1: null,
         productPrice1: null,
@@ -251,9 +251,9 @@ const dummyData = [
         description: null,
         latitude: 33.5191286,
         longitude: 126.599379,
-        keywords: null,
+        keywords: "JMT,꿀맛",
         isFavorite: false,
-        imageUrl: null,
+        imageUrl:  "/assets/g2.jpg",
         homepageLink: "https://akkome.com/",
         productName1: null,
         productPrice1: null,
@@ -319,7 +319,7 @@ const FarmDetailPage = () => {
                 />
             </header>
             <div className="p-3">
-                <img src={farm.imageUrl} className="rounded-bl"/>
+                {/*<img src={farm.imageUrl} className="rounded-bl" alt={farm.imageUrl}/>*/}
                 <h1 className="text-3xl font-bold mt-4">{farm.name}</h1>
                 <div className="flex gap-2 mt-2">
                     {farm.keywords
